@@ -1,0 +1,895 @@
+@import url('https://fonts.cdnfonts.com/css/earth-orbiter');
+@import url('https://fonts.cdnfonts.com/css/sf-intermosaic');
+@import url('https://fonts.cdnfonts.com/css/fox-on-the-run');
+
+
+/* Diseños basicos para la pagina y contenedores */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #151E3F;
+    user-select: none;
+}
+
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+/* Diseño para la scrollbar */
+body::-webkit-scrollbar{
+    width: 15px;
+    transition: all 2s ease;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #ffffff19;
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: #d596ef2a;
+}
+
+:root{
+    --color-fondo: #151E3F;
+}
+
+
+.contenedor{
+    position: relative;
+    display: flex;
+    height: 100%;
+    gap: 100px 100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+
+.btn{
+    position: relative;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    z-index: 2;
+    touch-action: none;
+    background: none;
+}
+
+
+.decoracion-pagina{
+    position: absolute;
+    z-index: 0;
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: .4;
+}
+
+.decoracion-pagina-1{
+    width: 300px;
+    height: 300px;
+    background: rgb(32,224,213);
+    background: linear-gradient(90deg, rgba(32,224,213,1) 0%,
+    rgba(21,196,247,1) 50%, rgba(69,252,109,1) 100%);
+    border-radius: 100px;
+    transform: rotate(45deg);
+    left: 10px;
+    top: 1px;
+}
+
+
+.decoracion-pagina-2{
+    width: 200px;
+    height: 200px;
+    background: rgb(176,88,231);
+    background: linear-gradient(90deg, rgba(176,88,231,1) 0%
+    , rgba(232,55,136,1) 50%, rgba(249,213,80,1) 100%);
+    border-radius: 50%;
+    transform: rotate(45deg);
+    left: 1100px;
+    top: 90px;
+}
+
+.decoracion-pagina-3{
+    width: 350px;
+    height: 350px;
+    background: rgb(199,116,168);
+    background: linear-gradient(90deg, rgba(199,116,168,1) 0%,
+    rgba(137,82,255,1) 50%, rgba(60,246,12,1) 100%);
+    border-radius: 50px;
+    transform: rotate(69deg);
+    left: 300px;
+    top: 450px;
+}
+
+
+/* Diseños de los botones y con su enumeracion */
+
+
+/* boton 33 */
+
+.btn-33-contenedor{
+    position: relative;
+}
+
+.btn-33{
+    position: relative;
+    background: black;
+    border-radius: 12px;
+    width: 260px;
+    height: 100px;
+    transition: all .5s ease-out;
+    color: rgba(255, 255, 255, 0.301);
+}
+
+.btn-33:hover{
+    text-shadow: 0px 0px 20px white;
+    color: white;
+}
+
+
+.btn-33::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 1s linear;
+    background: linear-gradient(45deg, red, blue, deeppink,blue,
+    red, blue, deeppink,blue);
+    opacity: 0;
+}
+
+
+.btn-33:hover::after{
+    animation: btn-33-animacion 10s linear infinite;
+    background: linear-gradient(45deg, red, blue, deeppink,blue,
+    red, blue, deeppink,blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(15px);
+    opacity: 1;
+}
+
+
+@keyframes btn-33-animacion{
+    0%, 100%{
+        background-position: 0 0;
+    }
+
+    50%{
+        background-position: 400% 0;
+    }
+}
+
+
+
+/* boton 34 */
+
+
+
+.btn-34{
+    position: relative;
+    width: 220px;
+    left: 60px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    left: -0px;
+}
+
+
+.btn-34-span{
+    position: absolute;
+    left: -40px;
+    top: 0px;
+    width: 60%;
+    height: 100%;
+    background-color: rgb(47, 151, 242);
+    border-right: 4px solid rgb(139, 189, 191);
+    z-index: -1;
+    transform: skew(45deg);
+    transition: all .5s ease-out;
+}
+
+
+
+.btn-34-span-activado{
+    position: absolute;
+    left: 120px;
+    top: 0px;
+    width: 200%;
+    height: 100%;
+    background-color: rgb(86, 197, 26);
+    border-left: 4px solid rgb(155, 210, 157);
+    z-index: -1;
+    transform: skew(45deg);
+    transition: all .5s ease-out;
+}
+
+
+/* boton 35 */
+
+
+.btn-35{
+    position: relative;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: all .2s linear;
+    transition-delay: 1s;
+    font-family: 'Fox on the Run', sans-serif;
+    font-size: 22px;
+}
+
+
+.btn-35:hover{
+    background-color: #40cbdb;
+    box-shadow: 0px 0px 3px #29e3e7 , 0px 0px 40px #29e3e7;
+}
+
+
+.btn-35 span{
+    position: absolute;
+    display: block;
+}
+
+.btn-35-span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#29e3e7);
+}
+
+.btn-35:hover .btn-35-span1{
+    left: 100%;
+    transition: 1s;
+}
+
+.btn-35-span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#29e3e7);
+}
+
+.btn-35:hover .btn-35-span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: .5s;
+}
+
+.btn-35-span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,#29e3e7);
+}
+
+.btn-35:hover .btn-35-span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: .25s;
+}
+
+.btn-35-span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent,#29e3e7);
+}
+
+.btn-35:hover .btn-35-span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: .75s;
+}
+
+/* boton 36 */
+
+.btn-36{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 50px;
+    background: none;
+    border: 2px solid rgb(255, 27, 72);
+    border-radius: 50px;
+    color: rgb(255, 27, 72);
+    transition: transform .050s ease, background .1s ease-out;
+}
+
+.btn-36-activado{
+    animation: btn-36-peque .3s ease;
+}
+
+
+@keyframes btn-36-peque{
+    0%{
+        transform: scale(0.50);
+    }
+
+    70%{
+        transform: scale(1.2);
+    }
+
+    80%{
+        transform: scale(0.90);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.btn-36-spans{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 24px;
+    height: 24px;
+    background: none;
+    background-image: url(iconos/amor.png);
+    opacity: 0;
+}
+
+
+.btn-36-span1{
+    left: 60px;
+    top: 0px;
+    
+}
+
+.btn-36-span2{
+    left: 120px;
+    top: 22px;
+   
+}
+
+
+.btn-36-span3{
+    left: 120px;
+    top: 0px;
+    
+}
+
+
+.btn-36-span4{
+    left: 70px;
+    top: 22px;
+   
+}
+
+@keyframes btn-36-span1-ani{
+    0%{
+        transform: translate(0) rotate(350deg);
+        opacity: 1;
+    }
+
+    90%{
+        transform: translate(-20px, -50px);
+    }
+    
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes btn-36-span2-ani{
+    0%{
+        transform: translate(0) rotate(150deg);
+        opacity: 1;
+    }
+
+    90%{
+        transform: translate(20px, 50px);
+    }
+    
+    100%{
+        opacity: 0;
+    }
+}
+
+
+@keyframes btn-36-span3-ani{
+    0%{
+        transform: translate(0) rotate(20deg) scale(.80);
+        opacity: 1;
+    }
+
+    90%{
+        transform: translate(20px, -40px);
+    }
+    
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes btn-36-span4-ani{
+    0%{
+        transform: translate(0)  rotate(200deg) scale(.80);
+        opacity: 1;
+    }
+
+    90%{
+        transform: translate(-20px, 50px);
+    }
+    
+    100%{
+        opacity: 0;
+    }
+}
+
+/* boton 37 */
+
+.btn-37{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-out;
+    background-color: white;
+    width: 220px;
+    height: 60px;
+    letter-spacing: 13px;
+}
+
+.btn-37:hover{
+    transform: scale(1.1);
+    background-color: rgb(186, 47, 255);
+    box-shadow: 0px 0px 35px rgb(186, 47, 255);
+    color: rgb(217, 142, 254);
+    letter-spacing: 15px;
+}
+
+
+.btn-37::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--color-fondo);
+}
+
+
+.btn-37-span{
+    position: relative;
+    background: none;
+    z-index: 3;
+}
+
+.btn-37-span2{
+    position: absolute;
+    inset: 2px;
+    display: block;
+    z-index: 2;
+}
+
+
+.btn-37-span2::before{
+    content: '';
+    position: absolute;
+    left: 80%;
+    top: -3px;
+    width: 10px;
+    height: 5px;
+    background-color: var(--color-fondo);
+    transform: translate(-50%) skew(325deg);
+    transition: all .5s ease-out;
+}
+
+
+.btn-37-span2::after{
+    content: '';
+    position: absolute;
+    right: 80%;
+    bottom: -3px;
+    width: 10px;
+    height: 5px;
+    background-color: var(--color-fondo);
+    transform: translate(-50%) skew(325deg);
+    transition: all .5s ease-out;
+}
+
+
+.btn-37:hover .btn-37-span2::before{
+    width: 20px;
+    left: 20%;
+}
+
+.btn-37:hover .btn-37-span2::after{
+    width: 20px;
+    right: 20%;
+}
+
+
+
+
+
+/* boton 38 */
+
+
+.btn-38{
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    transition: all .5s ease;
+}
+
+.btn-38:hover{
+    text-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+
+
+
+.btn-38 span{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    width: 200px;
+    height: 60px;
+    border-radius: 8px;
+    box-shadow:  0px 5px 25px rgba(1 1 1 / 15%);
+    transition: all .1s ease-out;
+} 
+
+
+/* boton 39 */
+
+
+
+.btn-39{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #053677;
+    width: 220px;
+    height: 60px;
+    border-bottom: 3px solid black;
+    box-shadow: inset 0px 0px 10px rgb(52, 222, 225);
+}
+
+
+
+.btn-39-span{
+    position: absolute;
+    background: none;
+    font-family: 'SF Intermosaic', sans-serif;
+    top: 10px;
+    font-size: 18px;
+    animation: btn-39-span-animacion .8s linear infinite;
+    transition: all .6s ease;
+}
+
+@keyframes btn-39-span-animacion{
+    0%{
+        opacity: 1;
+    }
+
+    20%{
+        opacity: 0;
+    }
+
+    70%{
+        opacity: 1;
+    }
+    
+    100%{
+        opacity: 1;
+    }
+}
+
+.btn-39-valid-der{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: none;
+    width: 70%;
+    height: 100%;
+}
+
+
+.btn-39-valid-izq{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: none;
+    width: 50%;
+    height: 100%;
+}
+
+.btn-39-fondo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 80px;
+    border-radius: 25px;
+    background: rgb(236, 232, 232);
+}
+
+
+.btn-39-icono-der,
+.btn-39-icono-izq{
+    position: absolute;
+    opacity: 1;
+    background: none;
+    transform-origin: center;
+    top: 14px;
+}
+
+.btn-39-valid-der:active .btn-39-icono-der,
+.btn-39-valid-izq:active .btn-39-icono-izq{
+    transform: scale(.90);
+}
+
+.btn-39-icono-der{
+   left: -30px;
+}
+
+
+.btn-39-icono-izq{
+    right: -30px;
+}
+
+
+.btn-39-imagen{
+    position: absolute;
+    background: none;
+    transform-origin: center;
+    top: 20px;
+    left: 4px;
+    transition: all 3s ease-out;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-39-imagen-comienzo{
+    position: absolute;
+    background: none;
+    transform-origin: center;
+    top: 20px;
+    left: 3px;
+    background: url(imagenes/personaje-pie-izq\ x1.png);
+}
+
+.btn-39-imagen-derecha{
+    top: 20px;
+    left: 3px;
+    animation: 3s linear forwards;
+}
+
+
+.btn-39-imagen-izquierda{
+    top: 20px;
+    left: 170px;
+    animation: 3s linear forwards;
+}
+
+
+@keyframes btn-39-animacion-izq{
+    0%,86%{
+        background: url(imagenes/personaje-caminar-izq\ x1.gif);
+    }
+
+    87%{
+        background: url(imagenes/personaje-devuelta\ izq\ x1.gif);
+    }
+
+    100%{
+        background: url(imagenes/personaje-pie-der\ x1.png);
+    }
+}
+
+
+@keyframes btn-39-animacion-der{
+    0%,86%{
+        background: url(imagenes/personaje-caminar-\ der\ x1.gif);
+    }
+
+    87%{
+        background: url(imagenes/personaje-devuelta-der\ \ x1.gif);
+    }
+
+    100%{
+        background: url(imagenes/personaje-pie-izq\ x1.png);
+    }
+}
+
+
+/* boton 40 */
+
+
+
+.btn-40{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    font-family: 'Earth Orbiter', sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.175);
+    transition: all .4s ease;
+}
+
+.btn-40:hover{
+    letter-spacing: 18px;
+    font-size: 20px;
+    border: 2px solid #6fe4d0;
+    box-shadow: 0px 0px 10px #6fe4d0;
+}
+
+
+.btn-40::after{
+    content: "";
+    position: absolute;
+    left: -235px;
+    top: -5px;
+    width: 180px;
+    height: 60px;
+    border: 2px solid #0ad0af;
+    box-shadow: 0px 0px 35px #0ad0af, inset 0px 0px 50px #0ad0af;
+    z-index: -1;
+    transform: skew(45deg);
+    transition: all .6s ease-out;
+    pointer-events: none;
+}
+
+
+.btn-40:hover::after{
+    left: 300px;
+}
+
+
+@media (max-width: 719px){
+
+    body{
+        overflow: auto;
+    }
+
+   .contenedor{
+        margin: 40px auto;
+   }
+
+    .decoracion-pagina-1{
+        width: 120px;
+        height: 120px;
+        left: 20px;
+        top: 100px;
+    }
+
+    .decoracion-pagina-2{
+        left: 10px;
+        top: 850px;
+    }
+
+    .decoracion-pagina-3{
+        width: 180px;
+        height: 180px;
+        left: 120px;
+        top: 450px;
+    }
+
+}
+
+@media(min-width: 720px) and (max-width:1299px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 40px;
+        top: 20px;
+    }
+
+    .decoracion-pagina-2{
+        left: 370px;
+        top: 400px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 100px;
+        top: 1000px;
+    }
+}
+
+@media(min-width: 1300px) and (max-width: 1919px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 60px;
+        top: 60px;
+    }
+
+    .decoracion-pagina-2{
+        left: 1000px;
+        top: 200px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 500px;
+        top: 400px;
+    }
+
+
+}
+
+@media (min-width: 1920px){
+
+    .contenedor{
+        gap: 260px 350px;
+        margin: auto 50px;
+    }
+
+
+    .decoracion-pagina-1{
+        left: 300px;
+    }
+    
+    .decoracion-pagina-2{
+        left: auto;
+        right: 200px;
+        top: 300px;
+    }
+    
+    .decoracion-pagina-3{
+        left: 900px;
+        top: 700px;
+    }
+    
+}
+
